@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx --env-file .env --watch server.ts",
+    "dev": "tsx --env-file .env --watch src/server.ts",
+    "db:seed": "tsx --env-file .env src/database/seed.ts",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
-    "db:studio": "drizzle-kit studio"
+    "db:studio": "drizzle-kit studio",
+    "test": "vitest run"
   },
   "keywords": [],
   "author": "",
@@ -25,9 +27,13 @@
     "zod": "^4.1.13"
   },
   "devDependencies": {
+    "@faker-js/faker": "^10.1.0",
     "@types/node": "^24.10.1",
+    "@types/supertest": "^6.0.3",
     "drizzle-kit": "^0.31.7",
+    "supertest": "^7.1.4",
     "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.15"
   }
 }
